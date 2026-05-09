@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PeerReview Project Structure</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 30px;
+      line-height: 1.8;
+    }
+
+    h1 {
+      text-align: center;
+      color: #38bdf8;
+      margin-bottom: 40px;
+    }
+
+    .tree {
+      background: #1e293b;
+      padding: 25px;
+      border-radius: 12px;
+      overflow-x: auto;
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    }
+
+    ul {
+      list-style-type: none;
+      position: relative;
+      padding-left: 30px;
+    }
+
+    ul::before {
+      content: '';
+      border-left: 2px solid #475569;
+      position: absolute;
+      top: 0;
+      left: 10px;
+      bottom: 0;
+    }
+
+    li {
+      margin: 8px 0;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    li::before {
+      content: '';
+      position: absolute;
+      top: 14px;
+      left: -20px;
+      width: 20px;
+      border-top: 2px solid #475569;
+    }
+
+    .folder {
+      color: #facc15;
+      font-weight: bold;
+    }
+
+    .java {
+      color: #4ade80;
+    }
+
+    .main {
+      color: #fb7185;
+      font-weight: bold;
+    }
+
+    .description {
+      color: #94a3b8;
+      font-size: 14px;
+      margin-left: 8px;
+    }
+
+    .legend {
+      margin-top: 30px;
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    .legend h2 {
+      color: #38bdf8;
+    }
+
+    .legend p {
+      margin: 8px 0;
+    }
+
+    .flow {
+      margin-top: 40px;
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    .flow h2 {
+      color: #38bdf8;
+    }
+
+    .mvc {
+      font-size: 18px;
+      text-align: center;
+      margin-top: 20px;
+      color: #e2e8f0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📚 PeerReview Project Structure</h1>
+
+  <div class="tree">
+    <ul>
+      <li><span class="folder">📁 src</span>
+        <ul>
+          <li><span class="folder">📁 peerreview</span>
+            <ul>
+              <li>
+                <span class="main">☕ Main.java</span>
+                <span class="description">→ Point d’entrée principal du programme</span>
+              </li>
+
+              <li>
+                <span class="folder">📁 controller</span>
+                <span class="description">→ Gestion des actions utilisateur</span>
+                <ul>
+                  <li><span class="java">AssignmentController.java</span></li>
+                  <li><span class="java">AuthController.java</span></li>
+                  <li><span class="java">CritereController.java</span></li>
+                  <li><span class="java">EvaluationController.java</span></li>
+                  <li><span class="java">EvaluationDetailController.java</span></li>
+                  <li><span class="java">ReviewAssignmentController.java</span></li>
+                  <li><span class="java">SubmissionController.java</span></li>
+                </ul>
+              </li>
+
+              <li>
+                <span class="folder">📁 dao</span>
+                <span class="description">→ Accès base de données SQL Server</span>
+                <ul>
+                  <li><span class="java">AssignmentDAO.java</span></li>
+                  <li><span class="java">AssignmentDAOImpl.java</span></li>
+                  <li><span class="java">CritereDAO.java</span></li>
+                  <li><span class="java">CritereDAOImpl.java</span></li>
+                  <li><span class="java">EvaluationDAO.java</span></li>
+                  <li><span class="java">EvaluationDAOImpl.java</span></li>
+                  <li><span class="java">EvaluationDetailDAO.java</span></li>
+                  <li><span class="java">EvaluationDetailDAOImpl.java</span></li>
+                  <li><span class="java">ReviewAssignmentDAO.java</span></li>
+                  <li><span class="java">ReviewAssignmentDAOImpl.java</span></li>
+                  <li><span class="java">SubmissionDAO.java</span></li>
+                  <li><span class="java">SubmissionDAOImpl.java</span></li>
+                  <li><span class="java">UserDAO.java</span></li>
+                  <li><span class="java">UserDAOImpl.java</span></li>
+                </ul>
+              </li>
+
+              <li>
+                <span class="folder">📁 database</span>
+                <span class="description">→ Connexion JDBC vers SQL Server</span>
+                <ul>
+                  <li><span class="java">ConnectionDatabase.java</span></li>
+                </ul>
+              </li>
+
+              <li>
+                <span class="folder">📁 model</span>
+                <span class="description">→ Objets métier représentant les tables SQL</span>
+                <ul>
+                  <li><span class="java">Assignment.java</span></li>
+                  <li><span class="java">Critere.java</span></li>
+                  <li><span class="java">Evaluation.java</span></li>
+                  <li><span class="java">EvaluationDetail.java</span></li>
+                  <li><span class="java">ReviewAssignment.java</span></li>
+                  <li><span class="java">Submission.java</span></li>
+                  <li><span class="java">User.java</span></li>
+                </ul>
+              </li>
+
+              <li>
+                <span class="folder">📁 service</span>
+                <span class="description">→ Contient la logique métier</span>
+                <ul>
+                  <li><span class="java">AssignmentService.java</span></li>
+                  <li><span class="java">AuthService.java</span></li>
+                  <li><span class="java">CritereService.java</span></li>
+                  <li><span class="java">EvaluationDetailService.java</span></li>
+                  <li><span class="java">EvaluationService.java</span></li>
+                  <li><span class="java">ReviewAssignmentService.java</span></li>
+                  <li><span class="java">SubmissionService.java</span></li>
+                </ul>
+              </li>
+
+              <li>
+                <span class="folder">📁 util</span>
+                <span class="description">→ Fonctions utilitaires</span>
+                <ul>
+                  <li><span class="java">InputHelper.java</span></li>
+                </ul>
+              </li>
+
+              <li>
+                <span class="folder">📁 vue</span>
+                <span class="description">→ Interface console et menus</span>
+                <ul>
+                  <li><span class="java">Menu.java</span></li>
+                </ul>
+              </li>
+
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="flow">
+    <h2>🔗 Communication Entre Les Fichiers</h2>
+
+    <div class="mvc">
+      Main.java → Menu.java → Controller → Service → DAO → SQL Server
+    </div>
+
+    <br>
+
+    <h3 style="color:#facc15;">📌 Exemple : Assignment Flow</h3>
+
+    <div style="background:#0f172a;padding:15px;border-radius:10px;">
+
+      <p><span style="color:#fb7185;font-weight:bold;">1. Menu.java</span>
+      → L’utilisateur choisit : Créer Assignment</p>
+
+      <p>⬇</p>
+
+      <p><span style="color:#38bdf8;font-weight:bold;">2. AssignmentController.java</span>
+      → Reçoit l’action utilisateur</p>
+
+      <p>⬇</p>
+
+      <p><span style="color:#a78bfa;font-weight:bold;">3. AssignmentService.java</span>
+      → Vérifie la logique métier</p>
+
+      <p>⬇</p>
+
+      <p><span style="color:#4ade80;font-weight:bold;">4. AssignmentDAO.java</span>
+      → Interface contenant les méthodes SQL</p>
+
+      <p style="margin-left:40px;color:#94a3b8;">
+      Exemple : addAssignment(), getAllAssignments()
+      </p>
+
+      <p>⬇</p>
+
+      <p><span style="color:#f97316;font-weight:bold;">5. AssignmentDAOImpl.java</span>
+      → Implémente les vraies requêtes SQL</p>
+
+      <p style="margin-left:40px;color:#94a3b8;">
+      INSERT INTO Assignments ...
+      </p>
+
+      <p>⬇</p>
+
+      <p><span style="color:#22c55e;font-weight:bold;">6. ConnectionDatabase.java</span>
+      → Ouvre connexion JDBC avec SQL Server</p>
+
+      <p>⬇</p>
+
+      <p><span style="color:#e2e8f0;font-weight:bold;">7. SQL Server</span>
+      → Sauvegarde les données dans la table Assignments</p>
+
+    </div>
+
+    <br>
+
+    <h3 style="color:#facc15;">📌 Relation Interface ↔ Implémentation</h3>
+
+    <div style="background:#0f172a;padding:15px;border-radius:10px;">
+
+      <p>
+      <span style="color:#4ade80;font-weight:bold;">AssignmentDAO.java</span>
+      = Interface
+      </p>
+
+      <p style="margin-left:40px;color:#94a3b8;">
+      Contient uniquement les signatures des méthodes.
+      </p>
+
+      <p>
+      Exemple :
+      </p>
+
+      <pre style="color:#4ade80;">
+void addAssignment(Assignment assignment);
+      </pre>
+
+      <p>
+      ⬇
+      </p>
+
+      <p>
+      <span style="color:#f97316;font-weight:bold;">AssignmentDAOImpl.java</span>
+      = Implémentation réelle
+      </p>
+
+      <p style="margin-left:40px;color:#94a3b8;">
+      Contient le code SQL et JDBC.
+      </p>
+
+      <pre style="color:#f97316;">
+public class AssignmentDAOImpl
+implements AssignmentDAO
+      </pre>
+
+    </div>
+
+    <br>
+
+    <h3 style="color:#facc15;">📌 Communication Entre Les Packages</h3>
+
+    <div style="background:#0f172a;padding:15px;border-radius:10px;">
+
+      <pre style="color:#e2e8f0;">
+vue
+ ↓
+controller
+ ↓
+service
+ ↓
+dao
+ ↓
+database
+ ↓
+SQL Server
+      </pre>
+
+      <p style="color:#94a3b8;">
+      Les models sont utilisés dans toutes les couches.
+      </p>
+
+    </div>
+
+    <br>
+
+<div class="flow">
+    <h2>🔄 Architecture MVC + DAO</h2>
+
+    <div class="mvc">
+      Vue → Controller → Service → DAO → Database
+    </div>
+  </div>
+
+  <div class="legend">
+    <h2>📖 Explication des Couleurs</h2>
+
+    <p><span class="folder">📁 Jaune</span> → Packages / Dossiers</p>
+    <p><span class="java">☕ Vert</span> → Classes Java</p>
+    <p><span class="main">🚀 Rouge</span> → Main.java (point d’entrée)</p>
+  </div>
+
+</body>
+</html>
