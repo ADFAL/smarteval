@@ -120,6 +120,53 @@ src
     └───vue
             Menu.java
 ```
+---
+
+# 🌳 Visualisation Interactive de l’Architecture
+
+Le projet contient également une visualisation HTML interactive permettant de comprendre :
+
+* les relations entre les packages,
+* la communication entre les fichiers Java,
+* l’architecture MVC,
+* DAO ↔ DAOImpl,
+* le flow complet du système.
+
+---
+
+## 📂 Fichier HTML
+
+```text id="sx8m1v"
+peerreview_project_tree_visualization.html
+```
+
+---
+
+## 🔗 Ouvrir la Visualisation
+
+[🌳 Open Project Visualization](peerreview_project_tree_visualization.html)
+
+---
+
+## 🔄 Exemple de Communication
+
+```text id="7s8j1o"
+Menu.java
+↓
+AssignmentController.java
+↓
+AssignmentService.java
+↓
+AssignmentDAO.java
+↓
+AssignmentDAOImpl.java
+↓
+ConnectionDatabase.java
+↓
+SQL Server
+```
+
+---
 
 ---
 
